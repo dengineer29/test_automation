@@ -15,4 +15,9 @@ The three things to remember as a beginner:That's really it for a beginner. The 
 3. Override a method by just redefining it with the same name
 
 
+Privacy level summary
+_name → “internal by convention”
+__name → “internally renamed (harder to access)”
+__name__ → reserved for Python special methods (__init__, __str__)
+
 
