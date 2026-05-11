@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.10.12 on linux)" generated="2026-05-11T22:37:31.369954" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Printjob" source="/home/dengineer/Desktop/Study/test_automation/Day1/test/test_printjob.robot">
+<test id="s1-t1" name="Color Job Display Should Contain Username" line="5">
+<kw name="Create Color Job" owner="PJ">
+<msg time="2026-05-11T22:37:31.421965" level="INFO">${job} = &lt;printjob.ColorPrintJob object at 0x7e8fab424700&gt;</msg>
+<var>${job}</var>
+<arg>skadi</arg>
+<arg>park.pdf</arg>
+<arg>100kb</arg>
+<arg>05/05/2026</arg>
+<arg>IM307+</arg>
+<arg>red</arg>
+<status status="PASS" start="2026-05-11T22:37:31.421531" elapsed="0.000497"/>
+</kw>
+<kw name="Get Display" owner="PJ">
+<msg time="2026-05-11T22:37:31.422485" level="INFO">${result} = User Name: skadi, File Name: park.pdf, Job Size: 100kb, Date: 05/05/2026, Printer: IM307+, Color: red</msg>
+<var>${result}</var>
+<arg>${job}</arg>
+<status status="PASS" start="2026-05-11T22:37:31.422267" elapsed="0.000249"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>skadi</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-05-11T22:37:31.422906" elapsed="0.000668"/>
+</kw>
+<status status="PASS" start="2026-05-11T22:37:31.420447" elapsed="0.003415"/>
+</test>
+<test id="s1-t2" name="Print Job Contains Black and White" line="11">
+<kw name="Create Bw Job" owner="PJ">
+<msg time="2026-05-11T22:37:31.425687" level="INFO">${job} = &lt;printjob.BWPrintJob object at 0x7e8fab425420&gt;</msg>
+<var>${job}</var>
+<arg>potchi</arg>
+<arg>dagat.docx</arg>
+<arg>18kb</arg>
+<arg>11/05/2026</arg>
+<arg>MP3055</arg>
+<status status="PASS" start="2026-05-11T22:37:31.425311" elapsed="0.000420"/>
+</kw>
+<kw name="Get Display" owner="PJ">
+<msg time="2026-05-11T22:37:31.426133" level="INFO">${result} = User Name: potchi, File Name: dagat.docx, Job Size: 18kb, Date: 11/05/2026, Printer: MP3055, Black and White print</msg>
+<var>${result}</var>
+<arg>${job}</arg>
+<status status="PASS" start="2026-05-11T22:37:31.425934" elapsed="0.000230"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>Black and White print</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-05-11T22:37:31.426318" elapsed="0.000549"/>
+</kw>
+<status status="PASS" start="2026-05-11T22:37:31.424108" elapsed="0.002980"/>
+</test>
+<test id="s1-t3" name="Cancel Contains Keyword" line="17">
+<kw name="Create Color Job" owner="PJ">
+<msg time="2026-05-11T22:37:31.428044" level="INFO">${job} = &lt;printjob.ColorPrintJob object at 0x7e8fab425e40&gt;</msg>
+<var>${job}</var>
+<arg>skadi</arg>
+<arg>park.pdf</arg>
+<arg>100kb</arg>
+<arg>05/05/2026</arg>
+<arg>IM307+</arg>
+<arg>red</arg>
+<status status="PASS" start="2026-05-11T22:37:31.427746" elapsed="0.000340"/>
+</kw>
+<kw name="Get Cancel Message" owner="PJ">
+<msg time="2026-05-11T22:37:31.428545" level="INFO">${result} = Cancel red print job</msg>
+<var>${result}</var>
+<arg>${job}</arg>
+<status status="PASS" start="2026-05-11T22:37:31.428289" elapsed="0.000291"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${result}</arg>
+<arg>red</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2026-05-11T22:37:31.428849" elapsed="0.000713"/>
+</kw>
+<status status="PASS" start="2026-05-11T22:37:31.427326" elapsed="0.002521"/>
+</test>
+<status status="PASS" start="2026-05-11T22:37:31.374948" elapsed="0.055637"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Printjob" id="s1" pass="3" fail="0" skip="0">Test Printjob</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
