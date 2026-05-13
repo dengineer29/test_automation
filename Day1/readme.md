@@ -42,3 +42,6 @@ Make abstract       @abstractmethod above method + pass as body
 ABC parent          class PrintJob(ABC):
 ABC error           TypeError if subclass skips an abstract method
 
+To run robot
+export PYTHONPATH=/home/dengineer/Desktop/Study/test_automation/Day1
+python3 -m robot test_printjob.robbot
