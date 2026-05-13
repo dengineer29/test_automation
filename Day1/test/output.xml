@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.10.12 on linux)" generated="2026-05-11T22:37:31.369954" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.10.12 on linux)" generated="2026-05-13T08:45:19.583420" rpa="false" schemaversion="5">
 <suite id="s1" name="Test Printjob" source="/home/dengineer/Desktop/Study/test_automation/Day1/test/test_printjob.robot">
 <test id="s1-t1" name="Color Job Display Should Contain Username" line="5">
 <kw name="Create Color Job" owner="PJ">
-<msg time="2026-05-11T22:37:31.421965" level="INFO">${job} = &lt;printjob.ColorPrintJob object at 0x7e8fab424700&gt;</msg>
+<msg time="2026-05-13T08:45:19.669367" level="FAIL">Keyword 'PJ.Create Color Job' expected 1 argument, got 6.</msg>
 <var>${job}</var>
 <arg>skadi</arg>
 <arg>park.pdf</arg>
@@ -11,50 +11,48 @@
 <arg>05/05/2026</arg>
 <arg>IM307+</arg>
 <arg>red</arg>
-<status status="PASS" start="2026-05-11T22:37:31.421531" elapsed="0.000497"/>
+<status status="FAIL" start="2026-05-13T08:45:19.668896" elapsed="0.000602">Keyword 'PJ.Create Color Job' expected 1 argument, got 6.</status>
 </kw>
-<kw name="Get Display" owner="PJ">
-<msg time="2026-05-11T22:37:31.422485" level="INFO">${result} = User Name: skadi, File Name: park.pdf, Job Size: 100kb, Date: 05/05/2026, Printer: IM307+, Color: red</msg>
+<kw name="PJ.get_display">
 <var>${result}</var>
 <arg>${job}</arg>
-<status status="PASS" start="2026-05-11T22:37:31.422267" elapsed="0.000249"/>
+<status status="NOT RUN" start="2026-05-13T08:45:19.671821" elapsed="0.000199"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${result}</arg>
 <arg>skadi</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2026-05-11T22:37:31.422906" elapsed="0.000668"/>
+<status status="NOT RUN" start="2026-05-13T08:45:19.677761" elapsed="0.000159"/>
 </kw>
-<status status="PASS" start="2026-05-11T22:37:31.420447" elapsed="0.003415"/>
+<status status="FAIL" start="2026-05-13T08:45:19.660020" elapsed="0.026143">Keyword 'PJ.Create Color Job' expected 1 argument, got 6.</status>
 </test>
 <test id="s1-t2" name="Print Job Contains Black and White" line="11">
-<kw name="Create Bw Job" owner="PJ">
-<msg time="2026-05-11T22:37:31.425687" level="INFO">${job} = &lt;printjob.BWPrintJob object at 0x7e8fab425420&gt;</msg>
+<kw name="PJ.Create BW Job">
+<msg time="2026-05-13T08:45:19.693217" level="FAIL">No keyword with name 'PJ.Create BW Job' found.</msg>
 <var>${job}</var>
 <arg>potchi</arg>
 <arg>dagat.docx</arg>
 <arg>18kb</arg>
 <arg>11/05/2026</arg>
 <arg>MP3055</arg>
-<status status="PASS" start="2026-05-11T22:37:31.425311" elapsed="0.000420"/>
+<status status="FAIL" start="2026-05-13T08:45:19.692853" elapsed="0.001043">No keyword with name 'PJ.Create BW Job' found.</status>
 </kw>
-<kw name="Get Display" owner="PJ">
-<msg time="2026-05-11T22:37:31.426133" level="INFO">${result} = User Name: potchi, File Name: dagat.docx, Job Size: 18kb, Date: 11/05/2026, Printer: MP3055, Black and White print</msg>
+<kw name="PJ.get_display">
 <var>${result}</var>
 <arg>${job}</arg>
-<status status="PASS" start="2026-05-11T22:37:31.425934" elapsed="0.000230"/>
+<status status="NOT RUN" start="2026-05-13T08:45:19.695923" elapsed="0.000182"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${result}</arg>
 <arg>Black and White print</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2026-05-11T22:37:31.426318" elapsed="0.000549"/>
+<status status="NOT RUN" start="2026-05-13T08:45:19.696832" elapsed="0.000116"/>
 </kw>
-<status status="PASS" start="2026-05-11T22:37:31.424108" elapsed="0.002980"/>
+<status status="FAIL" start="2026-05-13T08:45:19.688986" elapsed="0.008999">No keyword with name 'PJ.Create BW Job' found.</status>
 </test>
 <test id="s1-t3" name="Cancel Contains Keyword" line="17">
 <kw name="Create Color Job" owner="PJ">
-<msg time="2026-05-11T22:37:31.428044" level="INFO">${job} = &lt;printjob.ColorPrintJob object at 0x7e8fab425e40&gt;</msg>
+<msg time="2026-05-13T08:45:19.705666" level="FAIL">Keyword 'PJ.Create Color Job' expected 1 argument, got 6.</msg>
 <var>${job}</var>
 <arg>skadi</arg>
 <arg>park.pdf</arg>
@@ -62,32 +60,55 @@
 <arg>05/05/2026</arg>
 <arg>IM307+</arg>
 <arg>red</arg>
-<status status="PASS" start="2026-05-11T22:37:31.427746" elapsed="0.000340"/>
+<status status="FAIL" start="2026-05-13T08:45:19.705082" elapsed="0.000719">Keyword 'PJ.Create Color Job' expected 1 argument, got 6.</status>
 </kw>
 <kw name="Get Cancel Message" owner="PJ">
-<msg time="2026-05-11T22:37:31.428545" level="INFO">${result} = Cancel red print job</msg>
 <var>${result}</var>
 <arg>${job}</arg>
-<status status="PASS" start="2026-05-11T22:37:31.428289" elapsed="0.000291"/>
+<status status="NOT RUN" start="2026-05-13T08:45:19.709078" elapsed="0.000164"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${result}</arg>
 <arg>red</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2026-05-11T22:37:31.428849" elapsed="0.000713"/>
+<status status="NOT RUN" start="2026-05-13T08:45:19.712638" elapsed="0.000417"/>
 </kw>
-<status status="PASS" start="2026-05-11T22:37:31.427326" elapsed="0.002521"/>
+<status status="FAIL" start="2026-05-13T08:45:19.699176" elapsed="0.028623">Keyword 'PJ.Create Color Job' expected 1 argument, got 6.</status>
 </test>
-<status status="PASS" start="2026-05-11T22:37:31.374948" elapsed="0.055637"/>
+<test id="s1-t4" name="Keyword Test" line="23">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-05-13T08:45:19.751119" level="INFO">${color} = red</msg>
+<var>${color}</var>
+<arg>red</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-05-13T08:45:19.745804" elapsed="0.005445"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${color}</arg>
+<arg>red</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-05-13T08:45:19.756284" elapsed="0.001087"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<msg time="2026-05-13T08:45:19.765249" level="FAIL">Evaluating expression 'red' failed: NameError: name 'red' is not defined nor importable as module</msg>
+<arg>${color}</arg>
+<arg>==</arg>
+<arg>red</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2026-05-13T08:45:19.762671" elapsed="0.002865">Evaluating expression 'red' failed: NameError: name 'red' is not defined nor importable as module</status>
+</kw>
+<status status="FAIL" start="2026-05-13T08:45:19.743077" elapsed="0.026347">Evaluating expression 'red' failed: NameError: name 'red' is not defined nor importable as module</status>
+</test>
+<status status="FAIL" start="2026-05-13T08:45:19.587823" elapsed="0.183974"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="4" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Test Printjob" id="s1" pass="3" fail="0" skip="0">Test Printjob</stat>
+<stat name="Test Printjob" id="s1" pass="0" fail="4" skip="0">Test Printjob</stat>
 </suite>
 </statistics>
 <errors>

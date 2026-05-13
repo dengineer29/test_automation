@@ -1,5 +1,5 @@
 *** Settings ***
-Library    resources.keywords.PrintJobKeywords    WITH NAME  PJ
+Library    resources.practice.PrintJobKeywords    WITH NAME  PJ
 
 *** Test Cases ***
 Color Job Display Should Contain Username
@@ -19,3 +19,8 @@ Cancel Contains Keyword
     ...     skadi  park.pdf  100kb  05/05/2026  IM307+  red
     ${result}=  PJ.get_cancel_message   ${job}
     Should Contain  ${result}   red
+
+Keyword Test
+    ${color}=     Set Variable    red
+    Should Be Equal     ${color}    red
+    Run Keyword If  ${color}  ==  red
