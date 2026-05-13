@@ -2073,25 +2073,25 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[0,0,184],[],[[4,0,0,[],[0,72,26,5],[[0,6,7,0,0,8,9,0,[0,81,1],[[81,5,5]]],[0,10,0,0,0,9,11,0,[3,84,0],[]],[0,12,13,0,14,15,0,0,[3,90,0],[]]]],[16,0,0,[],[0,101,9,17],[[0,18,0,0,0,19,9,0,[0,105,1],[[105,5,17]]],[0,10,0,0,0,9,11,0,[3,108,0],[]],[0,12,13,0,14,20,0,0,[3,109,0],[]]]],[21,0,0,[],[0,111,29,5],[[0,6,7,0,0,8,9,0,[0,117,1],[[118,5,5]]],[0,22,7,0,0,9,11,0,[3,121,0],[]],[0,12,13,0,14,23,0,0,[3,125,0],[]]]],[24,0,0,[],[0,155,26,25],[[0,26,13,0,27,28,29,0,[1,158,5],[[163,2,30]]],[0,31,13,0,32,33,0,0,[1,168,1],[]],[0,34,13,0,35,36,0,0,[0,175,3],[[177,5,25]]]]]],[],[4,0,4,0]];
+window.output["suite"] = [1,2,3,0,[],[1,0,151],[],[[4,0,0,[],[1,88,9],[[0,5,6,0,0,0,7,0,[1,92,1],[[93,2,8]]],[0,9,10,0,11,12,0,0,[1,95,2],[[0,13,10,0,14,15,0,0,[1,96,0],[[97,2,15]]]]]]],[16,0,0,[],[1,98,23],[[0,16,6,0,0,17,18,0,[1,100,1],[[101,2,19]]],[0,20,6,0,0,18,0,0,[1,103,6],[]],[0,21,6,0,0,0,22,0,[1,113,0],[[113,2,23]]],[0,9,10,0,11,24,0,0,[1,118,1],[[0,13,10,0,14,15,0,0,[1,119,1],[[119,2,15]]]]]]],[25,0,0,[],[1,123,10],[[0,26,6,0,0,27,18,0,[1,125,1],[[126,2,28]]],[0,29,6,0,0,18,30,0,[1,129,0],[[129,2,31]]],[0,32,10,0,33,34,0,0,[1,130,1],[]]]],[35,0,0,[],[1,134,16],[[0,16,6,0,0,36,18,0,[1,137,0],[[138,2,37]]],[0,38,6,0,0,18,39,0,[1,140,1],[[140,2,40]]],[0,32,10,0,33,41,0,0,[1,147,1],[]]]]],[],[4,4,0,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Test Printjob","*/home/dengineer/Desktop/Study/test_automation/Day1/test/test_printjob.robot","*test_printjob.robot","*Color Job Display Should Contain Username","*Keyword 'PJ.Create Color Job' expected 1 argument, got 6.","*Create Color Job","*PJ","*skadi    park.pdf    100kb    05/05/2026    IM307+    red","*${job}","*PJ.get_display","*${result}","*Should Contain","*BuiltIn","*<p>Fails if <code>container\x3c/code> does not contain <code>item\x3c/code> one or more times.\x3c/p>","*${result}    skadi","*Print Job Contains Black and White","*No keyword with name 'PJ.Create BW Job' found.","*PJ.Create BW Job","*potchi    dagat.docx    18kb    11/05/2026    MP3055","*${result}    Black and White print","*Cancel Contains Keyword","*Get Cancel Message","*${result}    red","*Keyword Test","*Evaluating expression 'red' failed: NameError: name 'red' is not defined nor importable as module","*Set Variable","*<p>Returns the given values which can then be assigned to a variables.\x3c/p>","*red","*${color}","*${color} = red","*Should Be Equal","*<p>Fails if the given objects are unequal.\x3c/p>","*${color}    red","*Run Keyword If","*<p>Runs the given keyword with the given arguments, if <code>condition\x3c/code> is true.\x3c/p>","*${color}    ==    red"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Practice2","*/home/dengineer/Desktop/Study/test_automation/Day1/test/practice2.robot","*practice2.robot","*Queue Is empty","*Queue Is Empty","*PJ","*${empty}","*${empty} = True","*Run Keyword If","*BuiltIn","*<p>Runs the given keyword with the given arguments, if <code>condition\x3c/code> is true.\x3c/p>","*'${empty}' == 'True'    Log    Match found","*Log","*<p>Logs the given message with the given level.\x3c/p>","*Match found","*Create Color Job","*potchi    imissskadi.pdf    18kb    today    MP3055    red","*${job}","*${job} = &lt;printjob.ColorPrintJob object at 0x7ba8984999c0&gt;","*Add Job To Queue","*Get Queue Size","*${result}","*${result} = 1","*'${result}' == '1'    Log    Match found","*Black And White","*Create Bw Job","*potchi    imissskadi.pdf    18kb    today    MP3055","*${job} = &lt;printjob.BWPrintJob object at 0x7ba89849a620&gt;","*Get Display","*${display}","*${display} = User Name: potchi, File Name: imissskadi.pdf, Job Size: 18kb, Date: today, Printer: MP3055, Black and White print","*Should Contain","*<p>Fails if <code>container\x3c/code> does not contain <code>item\x3c/code> one or more times.\x3c/p>","*${display}    Black and White","*Cancel Job Color","*potchi    imissskadi.pdf    18kb    today    MP3055    blue","*${job} = &lt;printjob.ColorPrintJob object at 0x7ba89849a350&gt;","*Get Cancel Message","*${message}","*${message} = Cancel blue print job","*${message}    blue"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:00","fail":4,"label":"All Tests","pass":0,"skip":0}],[],[{"elapsed":"00:00:00","fail":4,"id":"s1","label":"Test Printjob","name":"Test Printjob","pass":0,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:00","fail":0,"label":"All Tests","pass":4,"skip":0}],[],[{"elapsed":"00:00:00","fail":0,"id":"s1","label":"Practice2","name":"Practice2","pass":4,"skip":0}]];
 </script>
 <script type="text/javascript">
 window.output["errors"] = [];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1778633119588;
+window.output["baseMillis"] = 1778679686070;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 229;
+window.output["generated"] = 160;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;

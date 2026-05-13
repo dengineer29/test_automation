@@ -23,4 +23,4 @@ Cancel Contains Keyword
 Keyword Test
     ${color}=     Set Variable    red
     Should Be Equal     ${color}    red
-    Run Keyword If  ${color}  ==  red
+    Run Keyword If    '${color}' == 'red'    Log    Match found

@@ -18,7 +18,7 @@ class PrintJob(ABC):
 
 class ColorPrintJob(PrintJob):
     def __init__(self, user, filename, size, date, printer, color):
-        super().__init__(user, filename, size, date, printer,)
+        super().__init__(user, filename, size, date, printer)
         self.color = color
 
     def display_print(self):
