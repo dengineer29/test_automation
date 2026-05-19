@@ -1,124 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.10.12 on linux)" generated="2026-05-13T21:41:26.067970" rpa="false" schemaversion="5">
-<suite id="s1" name="Practice2" source="/home/dengineer/Desktop/Study/test_automation/Day1/test/practice2.robot">
-<test id="s1-t1" name="Queue Is empty" line="7">
-<kw name="Queue Is Empty" owner="PJ">
-<msg time="2026-05-13T21:41:26.162637" level="INFO">${empty} = True</msg>
-<var>${empty}</var>
-<status status="PASS" start="2026-05-13T21:41:26.162108" elapsed="0.000604"/>
-</kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-05-13T21:41:26.166586" level="INFO">Match found</msg>
-<arg>Match found</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-05-13T21:41:26.166199" elapsed="0.000475"/>
-</kw>
-<arg>'${empty}' == 'True'</arg>
-<arg>Log</arg>
-<arg>Match found</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-05-13T21:41:26.165232" elapsed="0.001518"/>
-</kw>
-<status status="PASS" start="2026-05-13T21:41:26.158425" elapsed="0.008907"/>
-</test>
-<test id="s1-t2" name="Create Color Job" line="11">
-<kw name="Create Color Job" owner="PJ">
-<msg time="2026-05-13T21:41:26.170784" level="INFO">${job} = &lt;printjob.ColorPrintJob object at 0x7ba8984999c0&gt;</msg>
+<robot generator="Robot 7.4.2 (Python 3.10.12 on linux)" generated="2026-05-19T21:53:51.692616" rpa="false" schemaversion="5">
+<suite id="s1" name="Weekendproj" source="/home/dengineer/Desktop/Study/test_automation/Day1/test/weekendproj.robot">
+<test id="s1-t1" name="Validate Color Print Jobs" line="28">
+<kw name="Validate Print Job">
+<kw name="Create Print Job" owner="PJ">
+<msg time="2026-05-19T21:53:51.790998" level="INFO">${job} = &lt;printjob.ColorPrintJob object at 0x7074c9e79d20&gt;</msg>
 <var>${job}</var>
-<arg>potchi</arg>
-<arg>imissskadi.pdf</arg>
-<arg>18kb</arg>
-<arg>today</arg>
-<arg>MP3055</arg>
-<arg>red</arg>
-<status status="PASS" start="2026-05-13T21:41:26.169858" elapsed="0.001030"/>
+<arg>${job_data}</arg>
+<status status="PASS" start="2026-05-19T21:53:51.790520" elapsed="0.000536"/>
 </kw>
-<kw name="Add Job To Queue" owner="PJ">
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<msg time="2026-05-19T21:53:51.792342" level="INFO">Argument types are:
+&lt;class 'printjob.ColorPrintJob'&gt;
+&lt;class 'NoneType'&gt;</msg>
 <arg>${job}</arg>
-<status status="PASS" start="2026-05-13T21:41:26.172881" elapsed="0.005661"/>
+<arg>${None}</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2026-05-19T21:53:51.791487" elapsed="0.000985"/>
 </kw>
-<kw name="Get Queue Size" owner="PJ">
-<msg time="2026-05-13T21:41:26.183133" level="INFO">${result} = 1</msg>
-<var>${result}</var>
-<status status="PASS" start="2026-05-13T21:41:26.182795" elapsed="0.000396"/>
+<arg>${COLOR_PRINT_JOBS}[0]</arg>
+<status status="PASS" start="2026-05-19T21:53:51.789630" elapsed="0.002982"/>
 </kw>
-<kw name="Run Keyword If" owner="BuiltIn">
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-05-13T21:41:26.189311" level="INFO">Match found</msg>
-<arg>Match found</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-05-13T21:41:26.188937" elapsed="0.000511"/>
-</kw>
-<arg>'${result}' == '1'</arg>
-<arg>Log</arg>
-<arg>Match found</arg>
-<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
-<status status="PASS" start="2026-05-13T21:41:26.188082" elapsed="0.001464"/>
-</kw>
-<status status="PASS" start="2026-05-13T21:41:26.168448" elapsed="0.023161"/>
-</test>
-<test id="s1-t3" name="Black And White" line="18">
-<kw name="Create Bw Job" owner="PJ">
-<msg time="2026-05-13T21:41:26.195599" level="INFO">${job} = &lt;printjob.BWPrintJob object at 0x7ba89849a620&gt;</msg>
+<kw name="Validate Print Job">
+<kw name="Create Print Job" owner="PJ">
+<msg time="2026-05-19T21:53:51.794382" level="INFO">${job} = &lt;printjob.BWPrintJob object at 0x7074c9e7a5c0&gt;</msg>
 <var>${job}</var>
-<arg>potchi</arg>
-<arg>imissskadi.pdf</arg>
-<arg>18kb</arg>
-<arg>today</arg>
-<arg>MP3055</arg>
-<status status="PASS" start="2026-05-13T21:41:26.195117" elapsed="0.000540"/>
+<arg>${job_data}</arg>
+<status status="PASS" start="2026-05-19T21:53:51.794120" elapsed="0.000320"/>
 </kw>
-<kw name="Get Display" owner="PJ">
-<msg time="2026-05-13T21:41:26.199235" level="INFO">${display} = User Name: potchi, File Name: imissskadi.pdf, Job Size: 18kb, Date: today, Printer: MP3055, Black and White print</msg>
-<var>${display}</var>
+<kw name="Should Not Be Equal" owner="BuiltIn">
+<msg time="2026-05-19T21:53:51.795087" level="INFO">Argument types are:
+&lt;class 'printjob.BWPrintJob'&gt;
+&lt;class 'NoneType'&gt;</msg>
 <arg>${job}</arg>
-<status status="PASS" start="2026-05-13T21:41:26.198857" elapsed="0.000421"/>
+<arg>${None}</arg>
+<doc>Fails if the given objects are equal.</doc>
+<status status="PASS" start="2026-05-19T21:53:51.794585" elapsed="0.000582"/>
 </kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${display}</arg>
-<arg>Black and White</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2026-05-13T21:41:26.200317" elapsed="0.000897"/>
+<arg>${COLOR_PRINT_JOBS}[1]</arg>
+<status status="PASS" start="2026-05-19T21:53:51.793493" elapsed="0.001764"/>
 </kw>
-<status status="PASS" start="2026-05-13T21:41:26.192955" elapsed="0.010022"/>
+<status status="PASS" start="2026-05-19T21:53:51.787539" elapsed="0.008392"/>
 </test>
-<test id="s1-t4" name="Cancel Job Color" line="28">
-<kw name="Create Color Job" owner="PJ">
-<msg time="2026-05-13T21:41:26.207877" level="INFO">${job} = &lt;printjob.ColorPrintJob object at 0x7ba89849a350&gt;</msg>
+<test id="s1-t2" name="Status Is Pending" line="34">
+<kw name="Validate Status Is Pending">
+<kw name="Create Print Job" owner="PJ">
+<msg time="2026-05-19T21:53:51.797779" level="INFO">${job} = &lt;printjob.ColorPrintJob object at 0x7074c9e7b310&gt;</msg>
 <var>${job}</var>
-<arg>potchi</arg>
-<arg>imissskadi.pdf</arg>
-<arg>18kb</arg>
-<arg>today</arg>
-<arg>MP3055</arg>
-<arg>blue</arg>
-<status status="PASS" start="2026-05-13T21:41:26.207452" elapsed="0.000479"/>
+<arg>${job_data}</arg>
+<status status="PASS" start="2026-05-19T21:53:51.797511" elapsed="0.000310"/>
+</kw>
+<kw name="Get Status" owner="PJ">
+<msg time="2026-05-19T21:53:51.798224" level="INFO">${status} = pending</msg>
+<var>${status}</var>
+<arg>${job}</arg>
+<status status="PASS" start="2026-05-19T21:53:51.797952" elapsed="0.000313"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status}</arg>
+<arg>pending</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-05-19T21:53:51.798419" elapsed="0.000647"/>
+</kw>
+<arg>${COLOR_PRINT_JOBS}[0]</arg>
+<status status="PASS" start="2026-05-19T21:53:51.797055" elapsed="0.002150"/>
+</kw>
+<kw name="Validate Status Is Pending">
+<kw name="Create Print Job" owner="PJ">
+<msg time="2026-05-19T21:53:51.800598" level="INFO">${job} = &lt;printjob.BWPrintJob object at 0x7074c9e7bca0&gt;</msg>
+<var>${job}</var>
+<arg>${job_data}</arg>
+<status status="PASS" start="2026-05-19T21:53:51.800159" elapsed="0.000503"/>
+</kw>
+<kw name="Get Status" owner="PJ">
+<msg time="2026-05-19T21:53:51.801560" level="INFO">${status} = pending</msg>
+<var>${status}</var>
+<arg>${job}</arg>
+<status status="PASS" start="2026-05-19T21:53:51.801129" elapsed="0.000480"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status}</arg>
+<arg>pending</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-05-19T21:53:51.801783" elapsed="0.000552"/>
+</kw>
+<arg>${COLOR_PRINT_JOBS}[1]</arg>
+<status status="PASS" start="2026-05-19T21:53:51.799581" elapsed="0.002875"/>
+</kw>
+<status status="PASS" start="2026-05-19T21:53:51.796463" elapsed="0.006223"/>
+</test>
+<test id="s1-t3" name="Job Is Cancelled" line="40">
+<kw name="Validate Status Is Cancelled">
+<kw name="Create Print Job" owner="PJ">
+<msg time="2026-05-19T21:53:51.804463" level="INFO">${job} = &lt;printjob.ColorPrintJob object at 0x7074c9eb8bb0&gt;</msg>
+<var>${job}</var>
+<arg>${job_data}</arg>
+<status status="PASS" start="2026-05-19T21:53:51.804151" elapsed="0.000365"/>
 </kw>
 <kw name="Get Cancel Message" owner="PJ">
-<msg time="2026-05-13T21:41:26.210082" level="INFO">${message} = Cancel blue print job</msg>
-<var>${message}</var>
 <arg>${job}</arg>
-<status status="PASS" start="2026-05-13T21:41:26.209592" elapsed="0.000560"/>
+<status status="PASS" start="2026-05-19T21:53:51.804729" elapsed="0.000363"/>
 </kw>
-<kw name="Should Contain" owner="BuiltIn">
-<arg>${message}</arg>
-<arg>blue</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2026-05-13T21:41:26.217192" elapsed="0.000806"/>
+<kw name="Get Status" owner="PJ">
+<msg time="2026-05-19T21:53:51.805648" level="INFO">${is_cancelled} = cancelled</msg>
+<var>${is_cancelled}</var>
+<arg>${job}</arg>
+<status status="PASS" start="2026-05-19T21:53:51.805312" elapsed="0.000386"/>
 </kw>
-<status status="PASS" start="2026-05-13T21:41:26.204010" elapsed="0.015561"/>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${is_cancelled}</arg>
+<arg>cancelled</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-05-19T21:53:51.806016" elapsed="0.000642"/>
+</kw>
+<arg>${COLOR_PRINT_JOBS}[0]</arg>
+<status status="PASS" start="2026-05-19T21:53:51.803612" elapsed="0.003191"/>
+</kw>
+<kw name="Validate Status Is Cancelled">
+<kw name="Create Print Job" owner="PJ">
+<msg time="2026-05-19T21:53:51.808094" level="INFO">${job} = &lt;printjob.BWPrintJob object at 0x7074c9eb9660&gt;</msg>
+<var>${job}</var>
+<arg>${job_data}</arg>
+<status status="PASS" start="2026-05-19T21:53:51.807815" elapsed="0.000325"/>
+</kw>
+<kw name="Get Cancel Message" owner="PJ">
+<arg>${job}</arg>
+<status status="PASS" start="2026-05-19T21:53:51.808302" elapsed="0.000308"/>
+</kw>
+<kw name="Get Status" owner="PJ">
+<msg time="2026-05-19T21:53:51.809155" level="INFO">${is_cancelled} = cancelled</msg>
+<var>${is_cancelled}</var>
+<arg>${job}</arg>
+<status status="PASS" start="2026-05-19T21:53:51.808800" elapsed="0.000396"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${is_cancelled}</arg>
+<arg>cancelled</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-05-19T21:53:51.809371" elapsed="0.000707"/>
+</kw>
+<arg>${COLOR_PRINT_JOBS}[1]</arg>
+<status status="PASS" start="2026-05-19T21:53:51.807248" elapsed="0.002939"/>
+</kw>
+<status status="PASS" start="2026-05-19T21:53:51.803016" elapsed="0.007382"/>
 </test>
-<status status="PASS" start="2026-05-13T21:41:26.070492" elapsed="0.150633"/>
+<status status="PASS" start="2026-05-19T21:53:51.734134" elapsed="0.076785"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Practice2" id="s1" pass="4" fail="0" skip="0">Practice2</stat>
+<stat name="Weekendproj" id="s1" pass="3" fail="0" skip="0">Weekendproj</stat>
 </suite>
 </statistics>
 <errors>
