@@ -21,10 +21,6 @@ Black And White
     ${display}=     PJ.Get Display    ${job}
     Should Contain      ${display}      Black and White
 
-# Test 3: Cancel message contains job color
-# Create ColorPrintJob with color "blue", get cancel message,
-# Should Contain "blue"
-
 Cancel Job Color
     ${job}=     Create Color Job
     ...     potchi  imissskadi.pdf  18kb    today   MP3055  blue

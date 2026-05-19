@@ -6,11 +6,11 @@ class PrintJobKeywords:
     def __init__(self):
         self._queue= printjob.PrintQueue()
 
-    def create_color_job(self, user, filename, size, date, printer, color):
-        return printjob.ColorPrintJob(user, filename, size, date, printer, color)
-
-    def create_bw_job(self, user, filename, size, date, printer):
-        return printjob.BWPrintJob(user, filename, size, date, printer)
+    def create_print_job(self, user, filename, size, date, printer, color_mode, color_type, pages):
+        if color_mode == "color":
+            return printjob.ColorPrintJob(user, filename, size, date, printer, color_mode, color_type, pages)
+        elif color_mode == "bw":
+            return printjob.BWPrintJob(user, filename, size, date, printer, color_mode, color_type, pages)
 
     def get_display(self, job):
         return job.display_print()
