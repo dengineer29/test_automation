@@ -1,4 +1,4 @@
-import Day1.printjob as printjob
+import printjob
 
 queue = printjob.PrintQueue()             # create one shared queue for the whole session
 
@@ -43,6 +43,7 @@ while True:
     elif choice == "2":
         # show all jobs with index numbers and current status
         queue.print_jobList()
+        print(queue)
 
     elif choice == "3":
         # show the queue first so the user knows which index to pick

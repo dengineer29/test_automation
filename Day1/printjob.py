@@ -98,6 +98,12 @@ class PrintQueue:
     def __init__(self):
         self._jobs = []                   # private list — only modified through the methods below
 
+    def __len__(self):
+        return len(self._jobs)
+
+    def __iter__(self):
+        return iter(self._jobs)
+
     def add(self, job):
         # adds a job to the end of the queue
         self._jobs.append(job)
@@ -132,10 +138,11 @@ class PrintQueue:
             return self._jobs[index]
         return None                       # returns None if index is out of range — Robot test can assert this
 
+
     def print_jobList(self):
         # prints every job with its index number and current status so the user can reference by number
-        if not self._jobs:
+        if not self:
             print("Queue is empty.")
             return
-        for i, job in enumerate(self._jobs):    # enumerate() gives both the index and the job in one loop
+        for i, job in enumerate(self):    # enumerate() gives both the index and the job in one loop
             print(f"[{i}] {job.display_print()} | Status: {job.get_status()}")

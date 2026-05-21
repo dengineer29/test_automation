@@ -44,4 +44,19 @@ ABC error           TypeError if subclass skips an abstract method
 
 To run robot
 export PYTHONPATH=/home/dengineer/Desktop/Study/test_automation/Day1
-python3 -m robot test_printjob.robbot
+python3 -m robot test_printjob.robot
+
+@instancemethod
+no decorator
+    - uses self
+    - if need to get value from the class or modify
+
+@classmethod
+decorator: @classmethod
+    - creates objects through other ways
+    - use cls as argument
+
+@staticmethod
+decorator: @staticmethod
+    - normal function
+    - helper function
