@@ -1,0 +1,23 @@
+# Print job automation — training project
+
+Python OOP + Robot Framework test suite for simulating
+and testing Xerox print jobs.
+
+## Setup
+```
+pip install robotframework
+sudo apt install cups cups-pdf
+sudo systemctl start cups
+```
+
+## Project structure
+- `printjob.py` — PrintJob, ColorPrintJob, BWPrintJob, PrintQueue classes
+- `log_parser.py` — LogEntry and LogParser for CUPS log analysis
+- `resources/keywords.py` — Robot Framework keyword library
+- `tests/` — Robot test suites
+
+## Run the tests
+```
+robot --outputdir results tests/
+```
+Open `results/log.html` to see results.

@@ -1,10 +1,13 @@
 #__init__ with a PrintQueue, create_color_job, create_bw_job, get_job_display, get_cancel_message, add_job_to_queue, get_queue_size, queue_is_empty.
 import printjob
+import subprocess, time
+from log_parser import LogParser
 
 class PrintJobKeywords:
 
     def __init__(self):
         self._queue= printjob.PrintQueue()
+        self._parser = LogParser("/home/dengineer/Desktop/Study/test_automation/Day1/cups_sample.log")
 
     def create_print_job(self, job_data):
         if job_data["color_mode"] == "color":
@@ -32,4 +35,27 @@ class PrintJobKeywords:
             return True
         else:
             return False
-           
+    
+    def submit_job_to_printer(self, filepath, printer="VirtualPrinter"):
+        result = subprocess.run(
+            ["lp", "-d", printer, filepath],
+            capture_output=True, text=True
+        )
+        time.sleep(2) # give CUPS time to process
+        return result.stdout.strip()
+    
+    # Add these methods inside PrintJobKeywords
+    def load_log(self, filepath):
+        self._parser = LogParser(filepath)
+
+    def get_total_jobs(self):
+        return self._parser.total_jobs()
+
+    def get_total_pages(self):
+        return self._parser.total_pages()
+
+    def get_jobs_for_printer(self, printer):
+        return len(self._parser.jobs_for_printer(printer))
+
+    def get_top_user(self):
+        return self._parser.top_user()
