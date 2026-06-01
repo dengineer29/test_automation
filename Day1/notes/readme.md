@@ -54,9 +54,25 @@ no decorator
 @classmethod
 decorator: @classmethod
     - creates objects through other ways
-    - use cls as argument
+    - use cls as argument 
 
 @staticmethod
 decorator: @staticmethod
     - normal function
     - helper function
+
+What an IPP message actually is
+An IPP message is just a sequence of bytes in a specific order. It's not JSON, not XML, not plain text — it's raw binary. Every field has a fixed position and size. Here's the structure of a minimal Get-Printer-Attributes request:
+Bytes 0-1   → IPP version (1.1)
+Bytes 2-3   → Operation code (Get-Printer-Attributes = 0x000B)
+Bytes 4-7   → Request ID (any number, e.g. 1)
+Byte 8      → Begin operation attributes tag (0x01)
+... attributes follow ...
+Byte N      → End of attributes tag (0x03)
+
+example curl request
+curl -v   -X POST   -H "Content-Type: application/ipp"   --data-binary @ipp_request.bin   -o ipp_response.bin   http://localhost:631/printers/VirtualPrinter
+
+inspect binary file
+ xxd ipp_response.bin | head -5
+
