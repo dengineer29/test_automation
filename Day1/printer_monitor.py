@@ -25,10 +25,35 @@ class PrinterMonitor:
         error_indication, error_status, error_index, var_binds = next(iterator)
 
         if error_indication:
-            raise Exception(error_indication)
+            return None
 
         for _, value in var_binds:
             return value.prettyPrint()
+        
+    def get_printer_status(self):
+        printer_status = self._get("1.3.6.1.2.1.25.3.5.1.1.1")
+        return printer_status
+
+    def get_toner_level(self):
+        toner_level = self._get("1.3.6.1.2.1.43.11.1.1.9.1.1")
+        return toner_level
+
+    def get_page_count(self):
+        page_count = self._get("1.3.6.1.2.1.43.10.2.1.4.1.1")
+        return page_count
+
+    def is_ready(self, printer_status):
+        if printer_status == 3:
+            return True
+        else:
+            return False
+        
+    def has_toner(self, toner_level):
+        if toner_level > 20:
+            return True
+        else:
+        	return False
+
         
 def main():
     system = PrinterMonitor("localhost", "public", "v2c")
@@ -37,28 +62,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-#get_printer_status()
-#printer_status = _get(1.3.6.1.2.1.25.3.5.1.1.1)
-#return printer_status
-#
-#get_toner_level()
-#toner_level = _get(1.3.6.1.2.1.43.11.1.1.9.1.1)
-#return toner_level
-#
-#get_page_count()
-#page_count = _get(1.3.6.1.2.1.43.10.2.1.4.1.1)
-#return page_count
-#
-#is_ready()
-#if printer_status = 3:
-#	return True
-#else: 
-#	return False
-#
-#has_toner()
-#if toner_level > 20
-#	return True
-#else:
-#	return False

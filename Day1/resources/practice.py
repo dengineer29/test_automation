@@ -1,5 +1,5 @@
 #__init__ with a PrintQueue, create_color_job, create_bw_job, get_job_display, get_cancel_message, add_job_to_queue, get_queue_size, queue_is_empty.
-import printjob
+import printjob, printer_monitor
 import subprocess, time
 from log_parser import LogParser
 
@@ -8,7 +8,7 @@ class PrintJobKeywords:
     def __init__(self):
         self._queue= printjob.PrintQueue()
         self._parser = LogParser("/home/dengineer/Desktop/Study/test_automation/Day1/cups_sample.log")
-
+        
     def create_print_job(self, job_data):
         if job_data["color_mode"] == "color":
             return printjob.ColorPrintJob(job_data["user"], job_data["filename"], job_data["size"], job_data["date"], job_data["printer"], job_data["color_mode"], job_data["color_type"], job_data["pages"])
@@ -59,3 +59,17 @@ class PrintJobKeywords:
 
     def get_top_user(self):
         return self._parser.top_user()
+    
+class PrinterMonitor:
+    def __init__(self):
+        self._monitor = printer_monitor.PrinterMonitor("localhost", "public", "v2c")
+
+    def get_printer_status(self):
+        return self._monitor.get_printer_status()
+    
+    def has_toner(self):
+        return self._monitor.has_toner()
+    
+    def get_page_count(self):
+        return self._monitor.get_page_count()
+    

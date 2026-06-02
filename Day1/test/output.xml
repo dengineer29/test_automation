@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.10.12 on linux)" generated="2026-06-02T22:01:47.279099" rpa="false" schemaversion="5">
+<suite id="s1" name="Weekendproj" source="/home/dengineer/Desktop/Study/test_automation/Day1/test/weekendproj.robot">
+<kw name="Load Log" owner="PJ" type="SETUP">
+<msg time="2026-06-02T22:01:47.590323" level="FAIL">FileNotFoundError: [Errno 2] No such file or directory: 'cups_sample.log'</msg>
+<arg>cups_sample.log</arg>
+<status status="FAIL" start="2026-06-02T22:01:47.589696" elapsed="0.001108">FileNotFoundError: [Errno 2] No such file or directory: 'cups_sample.log'</status>
+</kw>
+<test id="s1-t1" name="Validate Color Print Jobs" line="30">
+<status status="FAIL" start="2026-06-02T22:01:47.591060" elapsed="0.000589">Parent suite setup failed:
+FileNotFoundError: [Errno 2] No such file or directory: 'cups_sample.log'</status>
+</test>
+<test id="s1-t2" name="Status Is Pending" line="36">
+<status status="FAIL" start="2026-06-02T22:01:47.592204" elapsed="0.000451">Parent suite setup failed:
+FileNotFoundError: [Errno 2] No such file or directory: 'cups_sample.log'</status>
+</test>
+<test id="s1-t3" name="Job Is Cancelled" line="42">
+<status status="FAIL" start="2026-06-02T22:01:47.592888" elapsed="0.000384">Parent suite setup failed:
+FileNotFoundError: [Errno 2] No such file or directory: 'cups_sample.log'</status>
+</test>
+<test id="s1-t4" name="Submit Job To VirtualPrinter" line="48">
+<status status="FAIL" start="2026-06-02T22:01:47.593508" elapsed="0.000461">Parent suite setup failed:
+FileNotFoundError: [Errno 2] No such file or directory: 'cups_sample.log'</status>
+</test>
+<test id="s1-t5" name="Log Has Five Jobs" line="52">
+<status status="FAIL" start="2026-06-02T22:01:47.599939" elapsed="0.004615">Parent suite setup failed:
+FileNotFoundError: [Errno 2] No such file or directory: 'cups_sample.log'</status>
+</test>
+<test id="s1-t6" name="Log Has Twenty One Pages" line="56">
+<status status="FAIL" start="2026-06-02T22:01:47.609604" elapsed="0.004116">Parent suite setup failed:
+FileNotFoundError: [Errno 2] No such file or directory: 'cups_sample.log'</status>
+</test>
+<test id="s1-t7" name="Top User Is Skadi" line="60">
+<status status="FAIL" start="2026-06-02T22:01:47.619590" elapsed="0.001568">Parent suite setup failed:
+FileNotFoundError: [Errno 2] No such file or directory: 'cups_sample.log'</status>
+</test>
+<test id="s1-t8" name="Printer Is Ready" line="64">
+<status status="FAIL" start="2026-06-02T22:01:47.622395" elapsed="0.000606">Parent suite setup failed:
+FileNotFoundError: [Errno 2] No such file or directory: 'cups_sample.log'</status>
+</test>
+<test id="s1-t9" name="Toner Level Is Sufficient" line="68">
+<status status="FAIL" start="2026-06-02T22:01:47.623394" elapsed="0.000439">Parent suite setup failed:
+FileNotFoundError: [Errno 2] No such file or directory: 'cups_sample.log'</status>
+</test>
+<test id="s1-t10" name="Page Count Increases After Job" line="72">
+<status status="FAIL" start="2026-06-02T22:01:47.625599" elapsed="0.000500">Parent suite setup failed:
+FileNotFoundError: [Errno 2] No such file or directory: 'cups_sample.log'</status>
+</test>
+<status status="FAIL" start="2026-06-02T22:01:47.280498" elapsed="0.346544">Suite setup failed:
+FileNotFoundError: [Errno 2] No such file or directory: 'cups_sample.log'</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="10" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Weekendproj" id="s1" pass="0" fail="10" skip="0">Weekendproj</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

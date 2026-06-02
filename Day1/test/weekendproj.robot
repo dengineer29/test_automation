@@ -1,5 +1,6 @@
 ***Settings***
 Library    resources.practice.PrintJobKeywords    WITH NAME    PJ
+Library    resources.practice.PrinterMonitor      WITH NAME    PM
 Variables    variable.py
 Suite Setup    PJ.Load Log    cups_sample.log
 
@@ -59,3 +60,17 @@ Log Has Twenty One Pages
 Top User Is Skadi
     ${user}=    PJ.Get Top User
     Should Be Equal    ${user}    skadi
+
+Printer Is Ready
+    ${status}=      PM.Get Printer Status
+    Should Be True      ${status}
+
+Toner Level Is Sufficient
+    ${toner}=      PM.Has Toner
+    Should Be True      ${toner}
+
+Page Count Increases After Job
+    ${prev_page}=       PM.Get Page Count
+    ${result}=      PJ.Submit Job To Printer    /etc/hostname
+    ${after_page}=      PM.Get Page Count
+    Should Be True      ${after_page} > ${after_page}
