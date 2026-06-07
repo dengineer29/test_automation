@@ -30,25 +30,19 @@ class PrinterMonitor:
         for _, value in var_binds:
             return value.prettyPrint()
         
-    def get_printer_status(self):
-        printer_status = self._get("1.3.6.1.2.1.25.3.5.1.1.1")
-        return printer_status
-
-    def get_toner_level(self):
-        toner_level = self._get("1.3.6.1.2.1.43.11.1.1.9.1.1")
-        return toner_level
-
     def get_page_count(self):
         page_count = self._get("1.3.6.1.2.1.43.10.2.1.4.1.1")
         return page_count
 
-    def is_ready(self, printer_status):
+    def is_ready(self):
+        printer_status = self._get("1.3.6.1.2.1.25.3.5.1.1.1")
         if printer_status == 3:
             return True
         else:
             return False
         
-    def has_toner(self, toner_level):
+    def has_toner(self):
+        toner_level = int(self._get("1.3.6.1.2.1.43.11.1.1.9.1.1"))
         if toner_level > 20:
             return True
         else:

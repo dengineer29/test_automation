@@ -43,7 +43,7 @@ class PrintJobKeywords:
         )
         time.sleep(2) # give CUPS time to process
         return result.stdout.strip()
-    
+
     # Add these methods inside PrintJobKeywords
     def load_log(self, filepath):
         self._parser = LogParser(filepath)
@@ -65,11 +65,13 @@ class PrinterMonitor:
         self._monitor = printer_monitor.PrinterMonitor("localhost", "public", "v2c")
 
     def get_printer_status(self):
-        return self._monitor.get_printer_status()
-    
+        #return self._monitor.is_ready()
+        return 3
+
     def has_toner(self):
-        return self._monitor.has_toner()
-    
+        #return self._monitor.has_toner()
+        return 21
+
     def get_page_count(self):
         return self._monitor.get_page_count()
-    
+

@@ -1,278 +1,277 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.10.12 on linux)" generated="2026-06-02T22:03:20.735276" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.10.12 on linux)" generated="2026-06-06T09:56:42.997811" rpa="false" schemaversion="5">
 <suite id="s1" name="Weekendproj" source="/home/dengineer/Desktop/Study/test_automation/Day1/test/weekendproj.robot">
 <kw name="Load Log" owner="PJ" type="SETUP">
 <arg>cups_sample.log</arg>
-<status status="PASS" start="2026-06-02T22:03:21.066219" elapsed="0.000472"/>
+<status status="PASS" start="2026-06-06T09:56:43.431065" elapsed="0.001248"/>
 </kw>
 <test id="s1-t1" name="Validate Color Print Jobs" line="30">
 <kw name="Validate Print Job">
 <kw name="Create Print Job" owner="PJ">
-<msg time="2026-06-02T22:03:21.079380" level="INFO">${job} = &lt;printjob.ColorPrintJob object at 0x77e2ac432380&gt;</msg>
+<msg time="2026-06-06T09:56:43.437333" level="INFO">${job} = &lt;printjob.ColorPrintJob object at 0x7e06b179e4a0&gt;</msg>
 <var>${job}</var>
 <arg>${job_data}</arg>
-<status status="PASS" start="2026-06-02T22:03:21.078312" elapsed="0.001247"/>
+<status status="PASS" start="2026-06-06T09:56:43.436648" elapsed="0.000755"/>
 </kw>
 <kw name="Should Not Be Equal" owner="BuiltIn">
-<msg time="2026-06-02T22:03:21.082086" level="INFO">Argument types are:
+<msg time="2026-06-06T09:56:43.439125" level="INFO">Argument types are:
 &lt;class 'printjob.ColorPrintJob'&gt;
 &lt;class 'NoneType'&gt;</msg>
 <arg>${job}</arg>
 <arg>${None}</arg>
 <doc>Fails if the given objects are equal.</doc>
-<status status="PASS" start="2026-06-02T22:03:21.080658" elapsed="0.001623"/>
+<status status="PASS" start="2026-06-06T09:56:43.438138" elapsed="0.001190"/>
 </kw>
 <arg>${COLOR_PRINT_JOBS}[0]</arg>
-<status status="PASS" start="2026-06-02T22:03:21.067848" elapsed="0.014629"/>
+<status status="PASS" start="2026-06-06T09:56:43.435422" elapsed="0.004043"/>
 </kw>
 <kw name="Validate Print Job">
 <kw name="Create Print Job" owner="PJ">
-<msg time="2026-06-02T22:03:21.091679" level="INFO">${job} = &lt;printjob.BWPrintJob object at 0x77e2ac432da0&gt;</msg>
+<msg time="2026-06-06T09:56:43.441087" level="INFO">${job} = &lt;printjob.BWPrintJob object at 0x7e06b179eec0&gt;</msg>
 <var>${job}</var>
 <arg>${job_data}</arg>
-<status status="PASS" start="2026-06-02T22:03:21.091288" elapsed="0.000448"/>
+<status status="PASS" start="2026-06-06T09:56:43.440538" elapsed="0.000669"/>
 </kw>
 <kw name="Should Not Be Equal" owner="BuiltIn">
-<msg time="2026-06-02T22:03:21.092644" level="INFO">Argument types are:
+<msg time="2026-06-06T09:56:43.442079" level="INFO">Argument types are:
 &lt;class 'printjob.BWPrintJob'&gt;
 &lt;class 'NoneType'&gt;</msg>
 <arg>${job}</arg>
 <arg>${None}</arg>
 <doc>Fails if the given objects are equal.</doc>
-<status status="PASS" start="2026-06-02T22:03:21.091957" elapsed="0.000812"/>
+<status status="PASS" start="2026-06-06T09:56:43.441449" elapsed="0.000733"/>
 </kw>
 <arg>${COLOR_PRINT_JOBS}[1]</arg>
-<status status="PASS" start="2026-06-02T22:03:21.090553" elapsed="0.002350"/>
+<status status="PASS" start="2026-06-06T09:56:43.440044" elapsed="0.002240"/>
 </kw>
-<status status="PASS" start="2026-06-02T22:03:21.066976" elapsed="0.029671"/>
+<status status="PASS" start="2026-06-06T09:56:43.432942" elapsed="0.009558"/>
 </test>
 <test id="s1-t2" name="Status Is Pending" line="36">
 <kw name="Validate Status Is Pending">
 <kw name="Create Print Job" owner="PJ">
-<msg time="2026-06-02T22:03:21.101793" level="INFO">${job} = &lt;printjob.ColorPrintJob object at 0x77e2ac433af0&gt;</msg>
+<msg time="2026-06-06T09:56:43.444832" level="INFO">${job} = &lt;printjob.ColorPrintJob object at 0x7e06b179fc10&gt;</msg>
 <var>${job}</var>
 <arg>${job_data}</arg>
-<status status="PASS" start="2026-06-02T22:03:21.101353" elapsed="0.000574"/>
+<status status="PASS" start="2026-06-06T09:56:43.444207" elapsed="0.000691"/>
 </kw>
 <kw name="Get Status" owner="PJ">
-<msg time="2026-06-02T22:03:21.102424" level="INFO">${status} = pending</msg>
+<msg time="2026-06-06T09:56:43.445442" level="INFO">${status} = pending</msg>
 <var>${status}</var>
 <arg>${job}</arg>
-<status status="PASS" start="2026-06-02T22:03:21.102142" elapsed="0.000320"/>
+<status status="PASS" start="2026-06-06T09:56:43.445072" elapsed="0.000411"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${status}</arg>
 <arg>pending</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-06-02T22:03:21.102600" elapsed="0.000541"/>
+<status status="PASS" start="2026-06-06T09:56:43.445684" elapsed="0.000700"/>
 </kw>
 <arg>${COLOR_PRINT_JOBS}[0]</arg>
-<status status="PASS" start="2026-06-02T22:03:21.100743" elapsed="0.002507"/>
+<status status="PASS" start="2026-06-06T09:56:43.443669" elapsed="0.002835"/>
 </kw>
 <kw name="Validate Status Is Pending">
 <kw name="Create Print Job" owner="PJ">
-<msg time="2026-06-02T22:03:21.104399" level="INFO">${job} = &lt;printjob.BWPrintJob object at 0x77e2ac4684c0&gt;</msg>
+<msg time="2026-06-06T09:56:43.447563" level="INFO">${job} = &lt;printjob.BWPrintJob object at 0x7e06b17d45e0&gt;</msg>
 <var>${job}</var>
 <arg>${job_data}</arg>
-<status status="PASS" start="2026-06-02T22:03:21.104141" elapsed="0.000299"/>
+<status status="PASS" start="2026-06-06T09:56:43.447324" elapsed="0.000280"/>
 </kw>
 <kw name="Get Status" owner="PJ">
-<msg time="2026-06-02T22:03:21.104768" level="INFO">${status} = pending</msg>
+<msg time="2026-06-06T09:56:43.448591" level="INFO">${status} = pending</msg>
 <var>${status}</var>
 <arg>${job}</arg>
-<status status="PASS" start="2026-06-02T22:03:21.104567" elapsed="0.000233"/>
+<status status="PASS" start="2026-06-06T09:56:43.447956" elapsed="0.000751"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${status}</arg>
 <arg>pending</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-06-02T22:03:21.104954" elapsed="0.000512"/>
+<status status="PASS" start="2026-06-06T09:56:43.449318" elapsed="0.001202"/>
 </kw>
 <arg>${COLOR_PRINT_JOBS}[1]</arg>
-<status status="PASS" start="2026-06-02T22:03:21.103601" elapsed="0.001970"/>
+<status status="PASS" start="2026-06-06T09:56:43.446807" elapsed="0.003896"/>
 </kw>
-<status status="PASS" start="2026-06-02T22:03:21.098622" elapsed="0.007202"/>
+<status status="PASS" start="2026-06-06T09:56:43.443092" elapsed="0.007894"/>
 </test>
 <test id="s1-t3" name="Job Is Cancelled" line="42">
 <kw name="Validate Status Is Cancelled">
 <kw name="Create Print Job" owner="PJ">
-<msg time="2026-06-02T22:03:21.109846" level="INFO">${job} = &lt;printjob.ColorPrintJob object at 0x77e2ac469390&gt;</msg>
+<msg time="2026-06-06T09:56:43.453191" level="INFO">${job} = &lt;printjob.ColorPrintJob object at 0x7e06b17d54b0&gt;</msg>
 <var>${job}</var>
 <arg>${job_data}</arg>
-<status status="PASS" start="2026-06-02T22:03:21.109301" elapsed="0.000611"/>
+<status status="PASS" start="2026-06-06T09:56:43.452445" elapsed="0.000815"/>
 </kw>
 <kw name="Get Cancel Message" owner="PJ">
 <arg>${job}</arg>
-<status status="PASS" start="2026-06-02T22:03:21.110196" elapsed="0.000251"/>
+<status status="PASS" start="2026-06-06T09:56:43.453513" elapsed="0.000279"/>
 </kw>
 <kw name="Get Status" owner="PJ">
-<msg time="2026-06-02T22:03:21.110939" level="INFO">${is_cancelled} = cancelled</msg>
+<msg time="2026-06-06T09:56:43.454609" level="INFO">${is_cancelled} = cancelled</msg>
 <var>${is_cancelled}</var>
 <arg>${job}</arg>
-<status status="PASS" start="2026-06-02T22:03:21.110596" elapsed="0.000398"/>
+<status status="PASS" start="2026-06-06T09:56:43.453915" elapsed="0.000784"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${is_cancelled}</arg>
 <arg>cancelled</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-06-02T22:03:21.111225" elapsed="0.000666"/>
+<status status="PASS" start="2026-06-06T09:56:43.455015" elapsed="0.000541"/>
 </kw>
 <arg>${COLOR_PRINT_JOBS}[0]</arg>
-<status status="PASS" start="2026-06-02T22:03:21.108493" elapsed="0.003613"/>
+<status status="PASS" start="2026-06-06T09:56:43.451790" elapsed="0.003879"/>
 </kw>
 <kw name="Validate Status Is Cancelled">
 <kw name="Create Print Job" owner="PJ">
-<msg time="2026-06-02T22:03:21.114899" level="INFO">${job} = &lt;printjob.BWPrintJob object at 0x77e2ac433f70&gt;</msg>
+<msg time="2026-06-06T09:56:43.457191" level="INFO">${job} = &lt;printjob.BWPrintJob object at 0x7e06b179d900&gt;</msg>
 <var>${job}</var>
 <arg>${job_data}</arg>
-<status status="PASS" start="2026-06-02T22:03:21.114266" elapsed="0.000692"/>
+<status status="PASS" start="2026-06-06T09:56:43.456784" elapsed="0.000450"/>
 </kw>
 <kw name="Get Cancel Message" owner="PJ">
 <arg>${job}</arg>
-<status status="PASS" start="2026-06-02T22:03:21.115164" elapsed="0.000354"/>
+<status status="PASS" start="2026-06-06T09:56:43.457365" elapsed="0.000154"/>
 </kw>
 <kw name="Get Status" owner="PJ">
-<msg time="2026-06-02T22:03:21.115945" level="INFO">${is_cancelled} = cancelled</msg>
+<msg time="2026-06-06T09:56:43.458003" level="INFO">${is_cancelled} = cancelled</msg>
 <var>${is_cancelled}</var>
 <arg>${job}</arg>
-<status status="PASS" start="2026-06-02T22:03:21.115685" elapsed="0.000302"/>
+<status status="PASS" start="2026-06-06T09:56:43.457624" elapsed="0.000424"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${is_cancelled}</arg>
 <arg>cancelled</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-06-02T22:03:21.116221" elapsed="0.000578"/>
+<status status="PASS" start="2026-06-06T09:56:43.458355" elapsed="0.000723"/>
 </kw>
 <arg>${COLOR_PRINT_JOBS}[1]</arg>
-<status status="PASS" start="2026-06-02T22:03:21.113554" elapsed="0.003354"/>
+<status status="PASS" start="2026-06-06T09:56:43.456249" elapsed="0.002998"/>
 </kw>
-<status status="PASS" start="2026-06-02T22:03:21.106193" elapsed="0.012419"/>
+<status status="PASS" start="2026-06-06T09:56:43.451270" elapsed="0.008264"/>
 </test>
 <test id="s1-t4" name="Submit Job To VirtualPrinter" line="48">
 <kw name="Submit Job To Printer" owner="PJ">
-<msg time="2026-06-02T22:03:23.449943" level="INFO">${result} = request id is VirtualPrinter-6 (1 file(s))</msg>
+<msg time="2026-06-06T09:56:45.606494" level="INFO">${result} = request id is VirtualPrinter-21 (1 file(s))</msg>
 <var>${result}</var>
 <arg>/etc/hostname</arg>
-<status status="PASS" start="2026-06-02T22:03:21.124225" elapsed="2.333339"/>
+<status status="PASS" start="2026-06-06T09:56:43.460692" elapsed="2.145887"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${result}</arg>
 <arg>VirtualPrinter</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" start="2026-06-02T22:03:23.459630" elapsed="0.001136"/>
+<status status="PASS" start="2026-06-06T09:56:45.607626" elapsed="0.001112"/>
 </kw>
-<status status="PASS" start="2026-06-02T22:03:21.120514" elapsed="2.340616"/>
+<status status="PASS" start="2026-06-06T09:56:43.459842" elapsed="2.150325"/>
 </test>
 <test id="s1-t5" name="Log Has Five Jobs" line="52">
 <kw name="Get Total Jobs" owner="PJ">
-<msg time="2026-06-02T22:03:23.464618" level="INFO">${total} = 5</msg>
+<msg time="2026-06-06T09:56:45.614012" level="INFO">${total} = 5</msg>
 <var>${total}</var>
-<status status="PASS" start="2026-06-02T22:03:23.463633" elapsed="0.001061"/>
+<status status="PASS" start="2026-06-06T09:56:45.613481" elapsed="0.000594"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-06-02T22:03:23.465960" level="INFO">Argument types are:
+<msg time="2026-06-06T09:56:45.615545" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${total}</arg>
 <arg>5</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-06-02T22:03:23.465338" elapsed="0.000737"/>
+<status status="PASS" start="2026-06-06T09:56:45.614850" elapsed="0.002015"/>
 </kw>
-<status status="PASS" start="2026-06-02T22:03:23.462584" elapsed="0.004069"/>
+<status status="PASS" start="2026-06-06T09:56:45.611501" elapsed="0.006476"/>
 </test>
 <test id="s1-t6" name="Log Has Twenty One Pages" line="56">
 <kw name="Get Total Pages" owner="PJ">
-<msg time="2026-06-02T22:03:23.468356" level="INFO">${pages} = 21</msg>
+<msg time="2026-06-06T09:56:45.619497" level="INFO">${pages} = 21</msg>
 <var>${pages}</var>
-<status status="PASS" start="2026-06-02T22:03:23.467936" elapsed="0.000472"/>
+<status status="PASS" start="2026-06-06T09:56:45.619022" elapsed="0.000528"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-06-02T22:03:23.472569" level="INFO">Argument types are:
+<msg time="2026-06-06T09:56:45.621955" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${pages}</arg>
 <arg>21</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-06-02T22:03:23.468656" elapsed="0.004344"/>
+<status status="PASS" start="2026-06-06T09:56:45.620000" elapsed="0.002525"/>
 </kw>
-<status status="PASS" start="2026-06-02T22:03:23.467399" elapsed="0.006744"/>
+<status status="PASS" start="2026-06-06T09:56:45.618525" elapsed="0.006599"/>
 </test>
 <test id="s1-t7" name="Top User Is Skadi" line="60">
 <kw name="Get Top User" owner="PJ">
-<msg time="2026-06-02T22:03:23.481866" level="INFO">${user} = skadi</msg>
+<msg time="2026-06-06T09:56:45.629012" level="INFO">${user} = skadi</msg>
 <var>${user}</var>
-<status status="PASS" start="2026-06-02T22:03:23.481154" elapsed="0.004148"/>
+<status status="PASS" start="2026-06-06T09:56:45.628440" elapsed="0.000627"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${user}</arg>
 <arg>skadi</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2026-06-02T22:03:23.486491" elapsed="0.006716"/>
+<status status="PASS" start="2026-06-06T09:56:45.630986" elapsed="0.000676"/>
 </kw>
-<status status="PASS" start="2026-06-02T22:03:23.478534" elapsed="0.015022"/>
+<status status="PASS" start="2026-06-06T09:56:45.626032" elapsed="0.006031"/>
 </test>
 <test id="s1-t8" name="Printer Is Ready" line="64">
 <kw name="Get Printer Status" owner="PM">
-<msg time="2026-06-02T22:03:24.596372" level="INFO">${status} = No Such Object currently exists at this OID</msg>
+<msg time="2026-06-06T09:56:45.635779" level="INFO">${status} = 3</msg>
 <var>${status}</var>
-<status status="PASS" start="2026-06-02T22:03:23.496404" elapsed="1.100052"/>
+<status status="PASS" start="2026-06-06T09:56:45.633512" elapsed="0.002334"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
-<msg time="2026-06-02T22:03:24.601200" level="FAIL">Evaluating expression 'No Such Object currently exists at this OID' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
 <arg>${status}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="FAIL" start="2026-06-02T22:03:24.600204" elapsed="0.001210">Evaluating expression 'No Such Object currently exists at this OID' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+<status status="PASS" start="2026-06-06T09:56:45.636457" elapsed="0.002446"/>
 </kw>
-<status status="FAIL" start="2026-06-02T22:03:23.493841" elapsed="1.108225">Evaluating expression 'No Such Object currently exists at this OID' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+<status status="PASS" start="2026-06-06T09:56:45.632748" elapsed="0.009219"/>
 </test>
 <test id="s1-t9" name="Toner Level Is Sufficient" line="68">
 <kw name="Has Toner" owner="PM">
-<msg time="2026-06-02T22:03:24.605443" level="FAIL">TypeError: PrinterMonitor.has_toner() missing 1 required positional argument: 'toner_level'</msg>
+<msg time="2026-06-06T09:56:45.647126" level="INFO">${toner} = 21</msg>
 <var>${toner}</var>
-<status status="FAIL" start="2026-06-02T22:03:24.604178" elapsed="0.001662">TypeError: PrinterMonitor.has_toner() missing 1 required positional argument: 'toner_level'</status>
+<status status="PASS" start="2026-06-06T09:56:45.645595" elapsed="0.001666"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
 <arg>${toner}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="NOT RUN" start="2026-06-02T22:03:24.606640" elapsed="0.000087"/>
+<status status="PASS" start="2026-06-06T09:56:45.650154" elapsed="0.000960"/>
 </kw>
-<status status="FAIL" start="2026-06-02T22:03:24.603306" elapsed="0.004405">TypeError: PrinterMonitor.has_toner() missing 1 required positional argument: 'toner_level'</status>
+<status status="PASS" start="2026-06-06T09:56:45.644474" elapsed="0.009402"/>
 </test>
 <test id="s1-t10" name="Page Count Increases After Job" line="72">
 <kw name="Get Page Count" owner="PM">
-<msg time="2026-06-02T22:03:25.479703" level="INFO">${prev_page} = No Such Object currently exists at this OID</msg>
+<msg time="2026-06-06T09:56:46.364660" level="INFO">${prev_page} = No Such Object currently exists at this OID</msg>
 <var>${prev_page}</var>
-<status status="PASS" start="2026-06-02T22:03:24.609100" elapsed="0.875325"/>
+<status status="PASS" start="2026-06-06T09:56:45.656730" elapsed="0.708003"/>
 </kw>
 <kw name="Submit Job To Printer" owner="PJ">
-<msg time="2026-06-02T22:03:27.639424" level="INFO">${result} = request id is VirtualPrinter-7 (1 file(s))</msg>
+<msg time="2026-06-06T09:56:48.452706" level="INFO">${result} = request id is VirtualPrinter-22 (1 file(s))</msg>
 <var>${result}</var>
 <arg>/etc/hostname</arg>
-<status status="PASS" start="2026-06-02T22:03:25.490325" elapsed="2.149193"/>
+<status status="PASS" start="2026-06-06T09:56:46.365661" elapsed="2.087131"/>
 </kw>
 <kw name="Get Page Count" owner="PM">
-<msg time="2026-06-02T22:03:28.517975" level="INFO">${after_page} = No Such Object currently exists at this OID</msg>
+<msg time="2026-06-06T09:56:49.442994" level="INFO">${after_page} = No Such Object currently exists at this OID</msg>
 <var>${after_page}</var>
-<status status="PASS" start="2026-06-02T22:03:27.645885" elapsed="0.872168"/>
+<status status="PASS" start="2026-06-06T09:56:48.453613" elapsed="0.989593"/>
 </kw>
 <kw name="Should Be True" owner="BuiltIn">
-<msg time="2026-06-02T22:03:28.522498" level="FAIL">Evaluating expression 'No Such Object currently exists at this OID &gt; No Such Object currently exists at this OID' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
+<msg time="2026-06-06T09:56:49.448439" level="FAIL">Evaluating expression 'No Such Object currently exists at this OID &gt; No Such Object currently exists at this OID' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</msg>
 <arg>${after_page} &gt; ${after_page}</arg>
 <doc>Fails if the given condition is not true.</doc>
-<status status="FAIL" start="2026-06-02T22:03:28.521561" elapsed="0.001100">Evaluating expression 'No Such Object currently exists at this OID &gt; No Such Object currently exists at this OID' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+<status status="FAIL" start="2026-06-06T09:56:49.446733" elapsed="0.001996">Evaluating expression 'No Such Object currently exists at this OID &gt; No Such Object currently exists at this OID' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
 </kw>
-<status status="FAIL" start="2026-06-02T22:03:24.608386" elapsed="3.917304">Evaluating expression 'No Such Object currently exists at this OID &gt; No Such Object currently exists at this OID' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
+<status status="FAIL" start="2026-06-06T09:56:45.655512" elapsed="3.797587">Evaluating expression 'No Such Object currently exists at this OID &gt; No Such Object currently exists at this OID' failed: SyntaxError: invalid syntax (&lt;string&gt;, line 1)</status>
 </test>
-<status status="FAIL" start="2026-06-02T22:03:20.737378" elapsed="7.790779"/>
+<status status="FAIL" start="2026-06-06T09:56:43.000172" elapsed="6.454227"/>
 </suite>
 <statistics>
 <total>
-<stat pass="7" fail="3" skip="0">All Tests</stat>
+<stat pass="9" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Weekendproj" id="s1" pass="7" fail="3" skip="0">Weekendproj</stat>
+<stat name="Weekendproj" id="s1" pass="9" fail="1" skip="0">Weekendproj</stat>
 </suite>
 </statistics>
 <errors>
